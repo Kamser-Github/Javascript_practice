@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.youtube_main{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 50px 50px auto;
+    grid-template-columns: 15% auto;
+    grid-template-areas: 
+    "header header"
+    "nav aside"
+    "nav section"
+    ;
+}
+header{
+    grid-area: header;
+    background-color: rgb(107, 15, 15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    grid-area: nav;
+    background-color: rgb(55, 47, 47);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+aside{
+    grid-area: aside;
+    background-color: rgb(96, 60, 60);
+    display: flex;
+}
+section{
+    grid-area: section;
+    background-color: rgb(210, 91, 91);
+    display: flex;
+    flex-direction: column;
+    
+}
+section>div{
+    margin:15px;
+    display: flex;
+    gap: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+dd{
+    margin:0;
+    padding:15px 60px;
+}
+aside>ul{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: left;
+    align-items: center;
+    margin:0;
+}
+li{
+    list-style: none;
+    padding: 3px 8px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 30%;
+    margin-right: 20px;
+}
+img,i,span{
+    display: inline-block;
+}
+img{
+    width:270px;
+}
+#search{
+    width: 50vh;
+    height: 24px;
+}
+.search_btu{
+    height: 24px;
+    font-size: 24px;
+}

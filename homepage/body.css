@@ -1,0 +1,97 @@
+/*
+CSS 선택자 기본
+
+1) * : 전체
+2) 태그명 : 해당 태그
+3) . : 클래스명
+4) # : 아이디명
+
+*/
+body{
+    background-color: rgb(247, 153, 12);
+    margin : 0;
+    padding : 0;
+}
+.grid{
+    /*클래스 grid명인 엘리먼트의 대하여 css 설정을 먹인것*/
+    /*배치 속성을 grid로 정해줌*/
+
+    display: grid;
+    height: 100vh;
+    /*200vh는 스크린 크기의 2배를 쓰겟다는것*/
+    /*보이는 영역을 100으로 다스겟다*/
+    grid-template-columns: auto 20%;
+    /*화면에 차지하는 %를 정하는것.*/
+    /*열의 대한 범위   자동 + 200px*/
+    grid-template-rows: 120px 50px auto 120px;
+    /*행에 대한 범위 지정 4개의 행이기 때문에 4개를 정한것.*/
+
+
+    /*그리드 정렬하기*/
+    grid-template-areas: 
+    /*1열            2열*/
+    "header       header" /*1행*/
+    "nav             nav" /*2행*/
+    "section       aside" /*3행*/
+    "footer       footer" /*4행*/
+    ;
+}
+
+header{
+    grid-area: header;
+    /*영역에 대한 이름을 지어주는것.*/
+    background-color: azure;
+}
+
+nav{
+    grid-area: nav;
+    background-color: rgb(97, 78, 115);
+}
+
+section{
+    grid-area: section;
+    background-color: rgb(198, 77, 77);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+/*아키텍쳐는 section의 자손이라서 따로 할당x*/
+aside{
+    grid-area: aside;
+    background-color: brown;
+}
+
+footer{
+    grid-area: footer;
+    background-color: rgb(39, 39, 41);
+}
+
+/*행 개수 세기*/
+/*열 개수 세기*/
+/* 
+4*2로 배치할 예정
+
+*/
+ul{
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(4,1fr);
+    list-style: none;
+}
+article#a2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,100px);
+    /*넘치는 요소에 대하여*/
+    /**/
+    grid-auto-flow: row;
+    grid-auto-rows: 100px;
+}
+
+
+
+div#c1{background-color: red;}
+div#c2{background-color: rgb(63, 58, 58);}
+div#c3{background-color: rgb(29, 15, 15);}
+div#c4{background-color: rgb(230, 215, 215);}
+

@@ -1,0 +1,160 @@
+body{
+    margin:0;
+    padding:0;
+    max-width: 1200px;
+    margin:auto;
+}
+
+.main{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 180px auto 180px;
+    grid-template-rows: 200px 1fr;
+    grid-template-areas: 
+    "header header header"
+    "nav section aside"
+    ;
+}
+header{
+    grid-area: header;
+    height: 200px;
+    background-color: #EDEDED;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+nav{
+    grid-area: nav;
+    background-color: #DFEBD7;
+}
+aside{
+    grid-area: aside;
+    background-color: #F9EDCB;
+}
+section{
+    grid-area: section;
+    /* background-color: rgb(114, 114, 248); */
+    min-height: 800px;
+}
+a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+}
+h1,form{
+    display: inline-block;
+    margin:0;
+    padding: 15px;
+    position: relative;
+}
+input{
+    display: inline-block;
+    width: 330px;
+    height: 20px;
+    border-radius: 20px;
+}
+.main_login{
+    display: flex;
+    justify-content: end;
+    border-radius: 5px;
+}
+.main_login>a{
+    background-color: #FAFAFA;
+    border: 1px solid #FAFAFAFA;
+    border-radius: 5px;
+}
+.main_logo{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+   
+}
+.main_search{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+h1{
+    /* border: 1px solid black; */
+    padding: 12px 50px;
+    /* background-color: rgb(137, 137, 137); */
+    color: aliceblue;
+}
+a{
+    /* background-color: antiquewhite; */
+    margin-right: 5px;
+    margin-bottom: 20px;
+    padding: 2px 1px;
+}
+li{
+    list-style: none;
+    padding: 10px 0;
+    font-size: 16px;
+}
+ul{
+    background-color: #F9F9F9;
+    margin:5px;
+    padding: 0 10px;
+}
+.book_list{
+    border-bottom: 1px solid rgb(222, 218, 218);
+}
+.main_list{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-flow: row;
+    grid-auto-rows: 340px;
+    gap: 10px;
+    margin-top: 40px;
+    min-height: 800px;
+}
+img{
+    max-width: 140px;
+}
+img,span{
+    display: inline-block;
+}
+.main_list>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 300px;
+    text-align: center;
+}
+span{
+    max-width: 160px;
+    display: inline-block;
+}
+.list_name{
+    margin-top: 10px;
+    color: rgb(163, 158, 150);
+    font-size: 14px;
+}
+.list_price :first-child{
+    color: blue;
+    font-weight: 600;
+    font-size: 14px;
+}
+.list_price :last-child{
+    color: rgb(255, 72, 0);
+    font-weight: 600;
+    font-size: 14px;
+}
+.book_name{
+    font-weight: 800;
+}
+
+i{
+    position: absolute;
+    right: 25px;
+    top: 20px;
+}
+#logo{
+    display: flex;
+    justify-content: flex-end;
+}
+#logo>img{
+    display: inline-block;
+}
