@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: inherit;
+    height: 100vh;
+}
+li {
+    list-style : none;
+}
+a {
+    text-decoration : none;
+}
+
+.wrap {
+    height: 100vh;
+    display : grid;
+    grid-template-columns : auto;
+    grid-template-rows : 80px 50px auto 50px;
+    grid-template-areas :
+    "header"
+    "nav"
+    "section"
+    "footer"
+    ;
+}
+
+header {
+    grid : header;
+    height: 100%;
+    background: rgb(230,230,230);
+    display : flex;
+    justify-content : center;
+    align-items: center;
+}
+nav {
+    grid : nav;
+    background: rgb(121,160,10);
+}
+section {
+    grid : section;
+    background: rgb(175,175,175);
+}
+footer {
+    grid : footer;
+    background: rgb(230,230,230);
+}

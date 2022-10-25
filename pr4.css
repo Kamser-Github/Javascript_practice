@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    max-width: 1280px;
+    height: 100vh;
+}
+.wrap{
+    display: grid;
+    height: 200%;
+
+    max-width: 1280px;
+    margin: auto;
+    grid-template-columns: 180px auto 180px;
+    grid-template-rows: 200px auto;
+    grid-auto-flow: row;
+    grid-template-areas: 
+    "header header header"
+    "nav section aside"
+    ;
+}
+nav{
+    grid-area: nav ;
+    background-color: aliceblue;
+}
+header{
+    grid-area: header;
+    background-color: antiquewhite;
+}
+aside{
+    grid-area: aside;
+    background-color: aqua;
+}
+section{
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-rows: 330px;
+    grid-area: section;
+    background-color: bisque;
+}
+ul{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-bottom: 1px dashed black;
+}
+li{
+    list-style: none;
+    width: inherit;
+    height: inherit;
+    margin: 40px 5px;
+    background-color: rgb(183, 174, 190);
+    box-sizing: border-box;
+
+}
+img{
+    display: block;
+    max-width: 100px;
+}
+.test{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.name{
+    max-width: 150px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+span{
+    display: inline-block;
+}
+.after span:after{
+    content:'|';
+}
+.after span:last-child::after{
+    content:none;
+}
