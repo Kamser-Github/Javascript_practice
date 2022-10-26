@@ -6,6 +6,9 @@ body{
     max-width: 1280px;
     height: 100vh;
 }
+.main button {
+    background-color: #D8D9CF;
+}
 .wrap{
     display: grid;
     height: 200%;
@@ -51,7 +54,6 @@ li{
     margin: 40px 5px;
     background-color: rgb(183, 174, 190);
     box-sizing: border-box;
-
 }
 img{
     display: block;

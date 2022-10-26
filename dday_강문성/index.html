@@ -8,11 +8,17 @@
     <link rel="styleSheet" href="dday.css">
 </head>
 <body>
-    <div class="timer">
-        <div><h1>타이머</h1></div>
-        <div><input type="date" id="Calendar" name="Calendar"></div>
-        <div><input type="text" id="date" name="date"></div>
+    <img src="img/back.jpg">
+    <div class="main_timer">
+        <div class="timer" id="times">
+            <div><h1>D-DAY</h1></div>
+            <div class="now_date"></div>
+            <div class="now_time"></div>
+            <div><input type="date" id="Calendar" name="Calendar"></div>
+            <div><input type="text" id="date" name="date" placeholder="예)2020-12-03"></div>
+        </div>
+        <!-- <div id="times"> </div> -->
+        <script src="dday.js"></script>
     </div>
-    <script src="dday.js"></script>
 </body>
 </html>
