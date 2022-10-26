@@ -8,15 +8,6 @@
     <link rel="styleSheet" href="kiosk.css">
 </head>
 <body>
-    <!-- 
-    키오스크
-    포장 / 매장
-    신메뉴 커피
-    이미지 클릭시 장바구니로 이동
-    장바구니 |  카드결제
-    장바구니 |  포인트 결제
-    x누르면 사라지기
-    -->
     <div class="main">
         <div class="takeout">
             <button>포장</button>
@@ -31,7 +22,7 @@
             <nav>
                 <ul class="menu_button">
                     <li>신메뉴</li>
-                    <li>커피</li>
+                    <li class="coffee_button">커피</li>
                     <li>논커피</li>
                     <li>디저트</li>
                 </ul>
@@ -41,10 +32,25 @@
                 </div>
             </section>
             <aside>
-                <div>결제칸</div>
+                <div class="card">카드 결제</div>
+                <div class="point">포인트 결제</div>
             </aside>
             <footer>
-                <div class="bag">장바구니</div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>메뉴</th>
+                                <th>가격</th>
+                                <th>수량</th>
+                                <th>총합</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bag">
+                            
+                        </tbody>
+                    </table>
+                </div>
             </footer>
         </div>
     </div>

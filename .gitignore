@@ -1,2 +1,9 @@
 images/
 .vscode/
+
+//확장자
+*.text
+*.exe
+*.zip
+*.jpg
+*.png

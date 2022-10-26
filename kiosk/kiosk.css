@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Coustard&family=Jua&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 * {
     margin : 0;
     padding : 0;
-    font-family: 'Coustard', serif;
     font-family: 'Jua', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
+
 }
 body{
     height: 100vh;
@@ -19,7 +18,7 @@ body{
     display: flex;
     gap : 5px;
 }
-button {
+.main button {
     width: 250px;
     height : 250px;
 }
@@ -32,7 +31,7 @@ button {
     width : 100vh;
     grid-template-columns: 70% 30%;
     grid-template-rows : 60px 50px auto 200px;
-    grid-auto-flow:row;
+    grid-auto-flow:row; 
     grid-template-areas:
     "header header"
     "nav nav"
@@ -55,24 +54,31 @@ nav {
     height: 100%;
     width : 100%;
     background-color: #FF8787;
+    border-radius: 15px;
 }
 section{
     grid-area : section;
     height: 100%;
     width : 100%;
-    background-color: #D8D9CF;
+    background-color: rgb(255,255,255);
+    border-radius: 15px;
 }
 aside{
     grid-area : aside;
     height: 100%;
     width : 100%;
     background-color: #FF8787;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 footer{
     grid-area : footer;
     height: 100%;
     width : 100%;
     background-color: #E26868;
+    border-radius: 15px;
 }
 ul {
     display: flex;
@@ -84,7 +90,9 @@ ul {
 li {
     list-style: none;
     font-size: 1em;
-    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
 }
 .menu{
     display: flex;
@@ -92,24 +100,36 @@ li {
 }
 .coffee_menu {
     display: flex;
+    justify-content: center;
     width: 33%;
     height : 100px;
 }
 .coffee_info{
     display : flex;
     flex-direction: column;
+    justify-content: center;
 }
-.bag{
-    height: 100%;
+table {
+    width: 100%;
+}
+th{
+    width : 25%;
+}
+.coffee_button{
+    padding: 1em;
+    background-color: rgb(255,255,255);
 }
 .bag_menu{
-    display : flex;
-    height: 30px;
-    box-sizing: border-box;
+    background-color: #FAF7F0;
 }
-.bag_name{
-    width: 50%;
+th{
+    border-radius: 5px;
+    padding: 2px;
 }
-.bag_price{
-    width: 50%;
+.point,.card {
+    background-color: #FF5858;
+    margin : 5px;
+    padding: 15px;
+    font-size: 30px;
+    border-radius: 15px;
 }
