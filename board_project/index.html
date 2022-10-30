@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        * {
+            margin : 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 10%;
+        }
+        .form-container {
+            width : 70vw;
+            margin : 10px auto auto auto;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            padding:5px;
+            margin-top : 10px;
+            border: solid 1px lightblue;
+            outline: none;
+        }
+
+        input[type=submit]{
+            cursor : pointer;
+        }
+        textarea {
+            resize : none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Board</h1>
+    <div class="form-container">
+        <form method="GET" action="">
+            <input type="text" readonly>
+            <textarea rows="20" readonly></textarea>
+            <input type="button" value="글목록">
+        </form>
+    </div>
+</body>
+</html>

@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="styleSheet" href="kiosk.css">
+    <script src="https://kit.fontawesome.com/fa861a7902.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="main">
         <div class="takeout">
-            <button>포장</button>
+            <button><i class="fa-solid fa-bag-shopping"></i><p>포장</p></button>
         </div>
         <div calss="store">
-            <button>매장</button>
+            <button><i class="fa-solid fa-mug-hot"></i><p>매장</p></button>
         </div>
     </div> 
     <div class="shopping">
@@ -21,19 +22,18 @@
             <header>xxx커피샵 오신걸 환영합니다</header>
             <nav>
                 <ul class="menu_button">
-                    <li>신메뉴</li>
-                    <li class="coffee_button">커피</li>
-                    <li>논커피</li>
-                    <li>디저트</li>
+                    <li class="menu_list m1" value="0">신메뉴</li>
+                    <li class="menu_list m2" value="1">커피</li>
+                    <li class="menu_list m3" value="2">논커피</li>
+                    <li class="menu_list m4" value="3">디저트</li>
                 </ul>
             </nav>
             <section>
                 <div class="menu">
-                </div>
             </section>
             <aside>
-                <div class="card">카드 결제</div>
-                <div class="point">포인트 결제</div>
+                <button class="buy_button">카드결제</button>
+                <button class="buy_button">포인트결제</button>  
             </aside>
             <footer>
                 <div>
@@ -42,8 +42,9 @@
                             <tr>
                                 <th>메뉴</th>
                                 <th>가격</th>
-                                <th>수량</th>
+                                <th class="bag_cnt">수량</th>
                                 <th>총합</th>
+                                <th class="bag_delete">X</th>
                             </tr>
                         </thead>
                         <tbody class="bag">
@@ -55,5 +56,6 @@
         </div>
     </div>
     <script src="kiosk.js" charset="UTF-8"S></script>
+    <!-- <script src="kiosk_otp.js" charset="UTF-8"S></script> -->
 </body>
 </html>

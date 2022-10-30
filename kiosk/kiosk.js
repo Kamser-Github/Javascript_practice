@@ -35,6 +35,18 @@ coffeeMenu.push(new coffee('음료메뉴12',3300,'img/coffee_sample2.png'));
 coffeeMenu.push(new coffee('음료메뉴13',1800,'img/coffee_sample2.png'));
 coffeeMenu.push(new coffee('음료메뉴14',1400,'img/coffee_sample2.png'));
 
+menu_board.addEventListener('click', function(e){
+    const coffee_name = e.querySelector('.coffee_name');
+    const coffee_price = e.querySelector('.coffee_price');
+    // console.log(coffee_name.getAttribute('value'));
+    let name = coffee_name.getAttribute('value');
+    let price = coffee_price.getAttribute('value');
+    
+    if(checkVaild(name,price)){
+        addDiv(name,price);
+    }
+});
+
 coffeeMenu.forEach(e=>{
     const newDiv = document.createElement('div');
     newDiv.setAttribute('class','coffee_menu');
@@ -57,26 +69,39 @@ coffeeMenu.forEach(e=>{
     menu_board.append(newDiv);
 });
 
-const coffee_menu = menu_board.querySelectorAll('.coffee_menu');
-
-coffee_menu.forEach(e=>{
-    e.addEventListener('click',function(){
-        const coffee_name = e.querySelector('.coffee_name');
-        const coffee_price = e.querySelector('.coffee_price');
-        console.log(coffee_name.getAttribute('value'));
-        let name = coffee_name.getAttribute('value');
-        let price = coffee_price.getAttribute('value');
+// const coffee_menu = menu_board.querySelectorAll('.coffee_menu');
+// coffee_menu.forEach(e=>{
+//     e.addEventListener('click', function(){
+//         const coffee_name = e.querySelector('.coffee_name');
+//         const coffee_price = e.querySelector('.coffee_price');
+//         // console.log(coffee_name.getAttribute('value'));
+//         let name = coffee_name.getAttribute('value');
+//         let price = coffee_price.getAttribute('value');
         
-        if(checkVaild(name,price)){
-            addDiv(name,price);
-        }
-    })
-})
+//         if(checkVaild(name,price)){
+//             addDiv(name,price);
+//         }
+//     });
+// })
+// 추가 수정할 부분
+// function addBag(event){
+//     const coffee_name = event.querySelector('.coffee_name');
+//     const coffee_price = event.querySelector('.coffee_price');
+//     // console.log(coffee_name.getAttribute('value'));
+//     let name = coffee_name.getAttribute('value');
+//     let price = coffee_price.getAttribute('value');
+    
+//     if(checkVaild(name,price)){
+//         addDiv(name,price);
+//     }
+// }
+
+
 function checkVaild(name,price){
     const bag = body.querySelectorAll('.bag_menu');
     for(let i=0 ; i<bag.length ; i++){
-        let bag_name = bag[i].querySelector('.bag_name').getAttribute('value');
-        let bag_price = bag[i].querySelector('.bag_price').getAttribute('value');
+        let bag_name = index_name(bag,i);
+        let bag_price = index_price(bag,i);
         if(name===bag_name&&price===bag_price){
             let bag_cnt = bag[i].querySelector('.bag_cnt');
             let nowCnt = parseInt(bag_cnt.getAttribute('value'));
@@ -93,10 +118,17 @@ function checkVaild(name,price){
     }
     return true;
 }
+function index_name(element,index){
+    return element[index].querySelector('.bag_name').getAttribute('value');
+}
+function index_price(element,index){
+    return element[index].querySelector('.bag_price').getAttribute('value');
+}
 
 function addDiv(name,price){
     const newDiv = document.createElement('tr');
     newDiv.setAttribute('class','bag_menu');
+    newDiv.setAttribute('id',name);
 
     const newName = document.createElement('th');
     newName.setAttribute('class','bag_name');
@@ -118,9 +150,52 @@ function addDiv(name,price){
     newSum.setAttribute('value',price);
     newSum.innerHTML = price;
 
+    const newDelete = document.createElement('th');
+    newDelete.setAttribute('class','bag_delete');
+    newDelete.setAttribute('type','button');
+    newDelete.addEventListener('click',function(){
+        let deleteTarget = document.querySelector(`#${name}`);
+        deleteTarget.remove();
+    });
+    newDelete.innerHTML='X';
+
     newDiv.append(newName);
     newDiv.append(newPrice);
     newDiv.append(newCnt);
     newDiv.append(newSum);
+    newDiv.append(newDelete);
+
+    newDiv.addEventListener('click', e=>{
+// 클릭하면 테이블에 정보가 갈수 있게
+    });
     menu_bag.append(newDiv);
+}
+let buy_button = body.querySelectorAll('.buy_button');
+buy_button.forEach(e=>{
+    e.addEventListener('click',addMenu);
+});
+/*
+forEach(e=>{
+    e.addEventListener('click',addMenu(e))
+    console.log('확인');
+});
+
+*/
+function addMenu(e){
+    if(!existsCoffee(e)){
+        alert('주문하실 메뉴가 없습니다.');
+        return;
+    }
+    const windowFeatures = "popup=true";
+    window.open('http://182.222.48.247:5501/kiosk/test.html',windowFeatures);
+}
+function existsCoffee(){    
+    let name = body.querySelector('.bag_name');
+    return name!==null;
+}
+function deleteAllMenu(){
+    let deleteAll = document.querySelectorAll('.bag_menu');
+    deleteAll.forEach(e=>{
+        e.remove(); 
+    });
 }

@@ -3,7 +3,6 @@
     margin : 0;
     padding : 0;
     font-family: 'Jua', sans-serif;
-
 }
 body{
     height: 100vh;
@@ -18,12 +17,33 @@ body{
     display: flex;
     gap : 5px;
 }
+.main.noShow {
+    display: none;
+}
+i{
+    font-size: 110px;
+}
+p {
+    font-size : 30px;
+}
 .main button {
     width: 250px;
     height : 250px;
+    font-size: 60px;
+    background-color: #CDFCF6;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.a {
+   display : none; 
+}
+.a.show{
+    display : block;
 }
 .shopping{
     display: none;
+}
+.shopping.show{
+    display : block;
 }
 .wrap{
     display : grid;
@@ -67,7 +87,7 @@ aside{
     grid-area : aside;
     height: 100%;
     width : 100%;
-    background-color: #FF8787;
+    /* background-color: #FF8787; */
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -77,7 +97,7 @@ footer{
     grid-area : footer;
     height: 100%;
     width : 100%;
-    background-color: #E26868;
+    background-color: #E5EBB2;
     border-radius: 15px;
 }
 ul {
@@ -87,16 +107,22 @@ ul {
     width : 100%;
     box-sizing: border-box;
 }
-li {
+.menu_list {
     list-style: none;
     font-size: 1em;
     padding-left: 20px;
     padding-right: 20px;
     box-sizing: border-box;
 }
+.menu_list.show {
+    background-color: white;
+}
 .menu{
-    display: flex;
+    display: none;
     flex-wrap: wrap;
+}
+.menu.show{
+    display:flex;
 }
 .coffee_menu {
     display: flex;
@@ -115,10 +141,6 @@ table {
 th{
     width : 25%;
 }
-.coffee_button{
-    padding: 1em;
-    background-color: rgb(255,255,255);
-}
 .bag_menu{
     background-color: #FAF7F0;
 }
@@ -126,10 +148,21 @@ th{
     border-radius: 5px;
     padding: 2px;
 }
-.point,.card {
-    background-color: #FF5858;
-    margin : 5px;
-    padding: 15px;
+.bag_cnt {
+    width: 10%;
+}
+.bag_delete {
+    width: 5%;
+}
+.buy_button{
+    border: none;
+    color: rgb(25,25,25);
+    padding: 15px 30px;
+    height: 90px;
+    width: 100%;
     font-size: 30px;
     border-radius: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
